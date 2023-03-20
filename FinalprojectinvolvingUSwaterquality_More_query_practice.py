@@ -307,3 +307,85 @@ days_to_test = 30
 
 for offset in days_to_test:
     fn(df.iloc[start_index:start_index+offset])
+# %%
+aa = f[(f['sample_date'] > '1903') & (f['sample_date'] <= '1913')]
+ab = f[(f['sample_date'] > '1913') & (f['sample_date'] <= '1923')]
+ac = f[(f['sample_date'] > '1923') & (f['sample_date'] <= '1933')]
+ad = f[(f['sample_date'] > '1933') & (f['sample_date'] <= '1943')]
+ae = f[(f['sample_date'] > '1943') & (f['sample_date'] <= '1953')]
+af = f[(f['sample_date'] > '1953') & (f['sample_date'] <= '1963')]
+ag = f[(f['sample_date'] > '1963') & (f['sample_date'] <= '1973')]
+ah = f[(f['sample_date'] > '1973') & (f['sample_date'] <= '1983')]
+ai = f[(f['sample_date'] > '1983') & (f['sample_date'] <= '1993')]
+aj = f[(f['sample_date'] > '1993') & (f['sample_date'] <= '2003')]
+ak = f[(f['sample_date'] > '2003') & (f['sample_date'] <= '2013')]
+al = f[(f['sample_date'] > '2013') & (f['sample_date'] <= '2023')]
+
+# %%
+aa
+# %%
+x = ['1903-1913','1903-1923','1923-1933','1933-1943','1943-1953','1953-1963','1963-1973','1973-1983','1983-1993','1993-2003','2003-2013','2013-2023']
+y = ((len(aa.station_number.unique()),len(ab.station_number.unique()),
+      len(ac.station_number.unique()),len(ad.station_number.unique()),
+      len(ae.station_number.unique()),len(af.station_number.unique()),
+      len(ag.station_number.unique()),len(ah.station_number.unique()),
+      len(ai.station_number.unique()),len(aj.station_number.unique()),
+      len(ak.station_number.unique()),len(al.station_number.unique()),
+      ))
+y
+# %%
+plt.plot(x, y, 'bs')
+plt.show()
+# %%
+x = ['1903-1913','1903-1923','1923-1933','1933-1943','1943-1953','1953-1963','1963-1973','1973-1983','1983-1993','1993-2003','2003-2013','2013-2023']
+y = ((len(aa.parameter.unique()),len(ab.parameter.unique()),
+      len(ac.parameter.unique()),len(ad.parameter.unique()),
+      len(ae.parameter.unique()),len(af.parameter.unique()),
+      len(ag.parameter.unique()),len(ah.parameter.unique()),
+      len(ai.parameter.unique()),len(aj.parameter.unique()),
+      len(ak.parameter.unique()),len(al.parameter.unique()),
+      ))
+y
+# %%
+plt.plot(x, y, 'bs')
+plt.show()
+# %%
+ag
+# %%
+ag = f[(f['sample_date'] > '1963') & (f['sample_date'] <= '1973')]
+# %%
+x2 =['1963'] 
+y2 = ((len(i.station_number.unique()),len(j.station_number.unique()),len(k.station_number.unique()),len(l.station_number.unique()),len(m.station_number.unique()),len(n.station_number.unique())))
+# %%
+g = f[(f['sample_date'] > '1963') & (f['sample_date'] <= '1973')]
+# %%
+g['sample_date'].count()
+# %%
+g['result'].plot(x="sample_date", y="result")
+# %%
+## There were a lot of results in 1960's and it seems in the beginning
+
+# %%
+aaa = f[(f['sample_date'] > '1963') & (f['sample_date'] <= '1964')]
+aab = f[(f['sample_date'] > '1964') & (f['sample_date'] <= '1965')]
+aac = f[(f['sample_date'] > '1965') & (f['sample_date'] <= '1966')]
+aad = f[(f['sample_date'] > '1966') & (f['sample_date'] <= '1967')]
+# %%
+aaa['sample_date'].count()
+#%%
+
+## So this is where the really big spike was apperently
+aab['sample_date'].count()
+# %%
+aac['sample_date'].count()
+# %%
+aad['sample_date'].count()
+#%%
+aad.info()
+# %%
+results = [part for _, part in f.groupby(pd.Grouper(freq='1Y'))]
+# %%
+
+## looks like you can actually sclice a Df based on years as integers.
+f[1963:1967]
+# %%
