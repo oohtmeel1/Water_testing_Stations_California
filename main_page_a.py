@@ -75,10 +75,44 @@ for row in map1903.itertuples():
 folium.LayerControl().add_to(m)
 
 
+m2 = folium.Map(location=(38.5816,-121.4944), zoom_start=6,zoom_control= True ,dragging = True, scrollWheelZoom=True)
+folium.Choropleth(
+    geo_data=us_counties,
+    data=map1903,
+    columns=["counties","county_name"],
+    key_on="feature.properties.COUNTY_NAME",
+    fill_color="BuPu",
+    fill_opacity=0.9,
+    line_opacity=0.5,
+    nan_fill_color="gray",
+    legend_name="number of stations per county",
+).add_to(m2)
+NIL = folium.features.GeoJson(
+    us_counties,
+    style_function=style_function, 
+    control=False,
+    highlight_function=highlight_function, 
+    tooltip=folium.features.GeoJsonTooltip(
+        fields=['COUNTY_NAME'],  # use fields from the json file
+        style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;") 
+    )
+)
+
+marker_cluster = MarkerCluster(
+ popups='counts',
+).add_to(m2)
+for row in map1903.itertuples():
+    #print(row)
+    folium.Marker(location=[row.latitude,row.longitude],popup=row.county_name).add_to(marker_cluster)
+m2.add_child(NIL)
+m2.keep_in_front(NIL)
+
+
 dicts = {"1903":m}
 years = st.sidebar.selectbox("Please pick a year range",
-                             ("1903-1913","1914-1923"))
+                             ("1903-1913","1914-1923","1924-1935"))
 
 st_data = st_folium(m, width=725)
+st_data = st_folium(m2, width = 725)
 
 
