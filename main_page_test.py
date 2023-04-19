@@ -106,7 +106,6 @@ NIL = folium.features.GeoJson(
     )
 ).add_to(m)
 m.add_child(NIL)
-m.add_child(folium.LayerControl())
 FIL = folium.features.GeoJson(
     geo_json,
     style_function=style_function, 
