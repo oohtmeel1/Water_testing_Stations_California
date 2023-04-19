@@ -159,7 +159,7 @@ color_scale.add_to(m)
 
 color_scalea = LinearColormap(['green','blue'], vmin = min(map1914_dict.values()), vmax = max(map1914_dict.values()))
 
-def get_color(feature):
+def get_colora(feature):
     value = map1914_dict.get(feature['properties']['COUNTY_NAME'])
     if value is None:
         return '#626262'
@@ -173,7 +173,7 @@ m1 = folium.Map(location=(38.5816,-120.4944),
 folium.GeoJson(
     data = us_counties,
     style_function = lambda feature: {
-        'fillColor': get_color(feature),
+        'fillColor': get_colora(feature),
         'fillOpacity': 0.7,
         'color' : 'black',
         'weight' : 1,
@@ -202,7 +202,7 @@ A = folium.features.GeoJson(
         fields=['COUNTY_NAME'
                 ,'counts'],
         aliases = ["County Name"
-                   ,'number of stations'], # use fields from the json file
+                   ,'number of stations '], # use fields from the json file
         style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;")
         
     )
@@ -218,7 +218,7 @@ color_scalea.add_to(m1)
 ###
 color_scaleb = LinearColormap(['green','blue'], vmin = min(map1924_dict.values()), vmax = max(map1924_dict.values()))
 
-def get_color(feature):
+def get_colorb(feature):
     value = map1924_dict.get(feature['properties']['COUNTY_NAME'])
     if value is None:
         return '#626262'
@@ -232,7 +232,7 @@ m2 = folium.Map(location=(38.5816,-120.4944),
 folium.GeoJson(
     data = us_counties,
     style_function = lambda feature: {
-        'fillColor': get_color(feature),
+        'fillColor': get_colorb(feature),
         'fillOpacity': 0.7,
         'color' : 'black',
         'weight' : 1,
@@ -261,7 +261,7 @@ B = folium.features.GeoJson(
         fields=['COUNTY_NAME'
                 ,'counts'],
         aliases = ["County Name"
-                   ,'number of stations'], # use fields from the json file
+                   ,'number of stations '], # use fields from the json file
         style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;")
         
     )
@@ -278,7 +278,7 @@ color_scaleb.add_to(m2)
 
 color_scalec = LinearColormap(['green','blue'], vmin = min(map1934_dict.values()), vmax = max(map1934_dict.values()))
 
-def get_color(feature):
+def get_colorc(feature):
     value = map1934_dict.get(feature['properties']['COUNTY_NAME'])
     if value is None:
         return '#626262'
@@ -292,7 +292,7 @@ m3 = folium.Map(location=(38.5816,-120.4944),
 folium.GeoJson(
     data = us_counties,
     style_function = lambda feature: {
-        'fillColor': get_color(feature),
+        'fillColor': get_colorc(feature),
         'fillOpacity': 0.7,
         'color' : 'black',
         'weight' : 1,
@@ -337,7 +337,7 @@ color_scalec.add_to(m3)
 ###
 color_scaled = LinearColormap(['green','blue'], vmin = min(map1944_dict.values()), vmax = max(map1944_dict.values()))
 
-def get_color(feature):
+def get_colord(feature):
     value = map1944_dict.get(feature['properties']['COUNTY_NAME'])
     if value is None:
         return '#626262'
@@ -351,7 +351,7 @@ m4 = folium.Map(location=(38.5816,-120.4944),
 folium.GeoJson(
     data = us_counties,
     style_function = lambda feature: {
-        'fillColor': get_color(feature),
+        'fillColor': get_colord(feature),
         'fillOpacity': 0.7,
         'color' : 'black',
         'weight' : 1,
@@ -396,7 +396,7 @@ color_scaled.add_to(m4)
 ###
 color_scalee = LinearColormap(['green','blue'], vmin = min(map1954_dict.values()), vmax = max(map1954_dict.values()))
 
-def get_color(feature):
+def get_colore(feature):
     value = map1954_dict.get(feature['properties']['COUNTY_NAME'])
     if value is None:
         return '#626262'
@@ -410,7 +410,7 @@ m5 = folium.Map(location=(38.5816,-120.4944),
 folium.GeoJson(
     data = us_counties,
     style_function = lambda feature: {
-        'fillColor': get_color(feature),
+        'fillColor': get_colore(feature),
         'fillOpacity': 0.7,
         'color' : 'black',
         'weight' : 1,
@@ -456,7 +456,7 @@ color_scalee.add_to(m5)
 
 color_scalef = LinearColormap(['green','blue'], vmin = min(map1964_dict.values()), vmax = max(map1964_dict.values()))
 
-def get_color(feature):
+def get_colorf(feature):
     value = map1964_dict.get(feature['properties']['COUNTY_NAME'])
     if value is None:
         return '#626262'
@@ -470,7 +470,7 @@ m6 = folium.Map(location=(38.5816,-120.4944),
 folium.GeoJson(
     data = us_counties,
     style_function = lambda feature: {
-        'fillColor': get_color(feature),
+        'fillColor': get_colorf(feature),
         'fillOpacity': 0.7,
         'color' : 'black',
         'weight' : 1,
@@ -516,7 +516,7 @@ color_scalef.add_to(m6)
 ###
 color_scaleg = LinearColormap(['green','blue'], vmin = min(map1974_dict.values()), vmax = max(map1974_dict.values()))
 
-def get_color(feature):
+def get_colorg(feature):
     value = map1974_dict.get(feature['properties']['COUNTY_NAME'])
     if value is None:
         return '#626262'
@@ -530,7 +530,7 @@ m7 = folium.Map(location=(38.5816,-120.4944),
 folium.GeoJson(
     data = us_counties,
     style_function = lambda feature: {
-        'fillColor': get_color(feature),
+        'fillColor': get_colorg(feature),
         'fillOpacity': 0.7,
         'color' : 'black',
         'weight' : 1,
@@ -575,7 +575,7 @@ color_scaleg.add_to(m7)
 ###
 color_scaleh = LinearColormap(['green','blue'], vmin = min(map1984_dict.values()), vmax = max(map1984_dict.values()))
 
-def get_color(feature):
+def get_colorh(feature):
     value = map1984_dict.get(feature['properties']['COUNTY_NAME'])
     if value is None:
         return '#626262'
@@ -589,7 +589,7 @@ m8 = folium.Map(location=(38.5816,-120.4944),
 folium.GeoJson(
     data = us_counties,
     style_function = lambda feature: {
-        'fillColor': get_color(feature),
+        'fillColor': get_colorh(feature),
         'fillOpacity': 0.7,
         'color' : 'black',
         'weight' : 1,
@@ -633,7 +633,7 @@ color_scaleh.add_to(m8)
 ##
 color_scalei = LinearColormap(['green','blue'], vmin = min(map1994_dict.values()), vmax = max(map1994_dict.values()))
 
-def get_color(feature):
+def get_colori(feature):
     value = map1994_dict.get(feature['properties']['COUNTY_NAME'])
     if value is None:
         return '#626262'
@@ -647,7 +647,7 @@ m9 = folium.Map(location=(38.5816,-120.4944),
 folium.GeoJson(
     data = us_counties,
     style_function = lambda feature: {
-        'fillColor': get_color(feature),
+        'fillColor': get_colori(feature),
         'fillOpacity': 0.7,
         'color' : 'black',
         'weight' : 1,
@@ -692,7 +692,7 @@ color_scalei.add_to(m9)
 ###
 color_scalej = LinearColormap(['green','blue'], vmin = min(map2004_dict.values()), vmax = max(map2004_dict.values()))
 
-def get_color(feature):
+def get_colorj(feature):
     value = map2004_dict.get(feature['properties']['COUNTY_NAME'])
     if value is None:
         return '#626262'
@@ -706,7 +706,7 @@ m10 = folium.Map(location=(38.5816,-120.4944),
 folium.GeoJson(
     data = us_counties,
     style_function = lambda feature: {
-        'fillColor': get_color(feature),
+        'fillColor': get_colorj(feature),
         'fillOpacity': 0.7,
         'color' : 'black',
         'weight' : 1,
@@ -751,7 +751,7 @@ color_scalej.add_to(m10)
 ###
 color_scalek = LinearColormap(['green','blue'], vmin = min(map2014_dict.values()), vmax = max(map2014_dict.values()))
 
-def get_color(feature):
+def get_colork(feature):
     value = map2014_dict.get(feature['properties']['COUNTY_NAME'])
     if value is None:
         return '#626262'
@@ -765,7 +765,7 @@ m11 = folium.Map(location=(38.5816,-120.4944),
 folium.GeoJson(
     data = us_counties,
     style_function = lambda feature: {
-        'fillColor': get_color(feature),
+        'fillColor': get_colork(feature),
         'fillOpacity': 0.7,
         'color' : 'black',
         'weight' : 1,
