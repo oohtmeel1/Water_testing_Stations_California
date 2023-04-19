@@ -157,7 +157,65 @@ color_scale.add_to(m)
 
 ####
 
+####
 
+color_scalea = LinearColormap(['green','blue'], vmin = min(map1914_dict.values()), vmax = max(map1914_dict.values()))
+
+def get_color(feature):
+    value = map1914_dict.get(feature['properties']['COUNTY_NAME'])
+    if value is None:
+        return '#626262'
+    else:
+        return color_scalea(value)
+
+    
+m1 = folium.Map(location=(38.5816,-120.4944),
+                 max_bounds=True, zoom_start=6,zoom_control= True ,dragging = True, scrollWheelZoom=True)
+
+folium.GeoJson(
+    data = us_counties,
+    style_function = lambda feature: {
+        'fillColor': get_color(feature),
+        'fillOpacity': 0.7,
+        'color' : 'black',
+        'weight' : 1,
+    }    
+).add_to(m1)
+NIL = folium.features.GeoJson(
+    us_counties,
+    style_function=style_function, 
+    control=False,
+    highlight_function=highlight_function, 
+    tooltip=folium.features.GeoJsonTooltip(
+        fields=['COUNTY_NAME' ],
+        aliases = ["County Name "], # use fields from the json file
+        style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;")
+        
+    )
+).add_to(m1)
+m1.add_child(NIL)
+
+A = folium.features.GeoJson(
+    geo_jsona,
+    style_function=style_function, 
+    control=True,
+    highlight_function=highlight_function, 
+    tooltip=folium.features.GeoJsonTooltip(
+        fields=['COUNTY_NAME'
+                ,'counts'],
+        aliases = ["County Name"
+                   ,'number of stations'], # use fields from the json file
+        style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;")
+        
+    )
+)
+m1.add_child(A)
+
+m1.add_child(folium.LayerControl())
+
+
+color_scalea.caption = "Number of stations per county"
+color_scalea.add_to(m1)
 
 
 
@@ -169,5 +227,7 @@ years = st.sidebar.selectbox("Please pick a year range",
 if years =="1903-1913":
     st_data = st_folium(m, width=500)
     st.sidebar.bar_chart(data=df_grouped1903, x='COUNTY_NAME', y='counts', width=0, height=0, use_container_width=True)
+if years =="1914-1923":
+    st_data = st_folium(m1, width=500)
 
 
