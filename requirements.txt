@@ -1,0 +1,8 @@
+branca==0.6.0
+folium ==0.14.0 
+json
+requests
+pandas
+geojson
+geopandas
+shapely
