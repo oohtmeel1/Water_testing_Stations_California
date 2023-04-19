@@ -6,6 +6,7 @@ from streamlit_folium import st_folium
 from branca.colormap import LinearColormap
 import json
 import geojson
+from pandas_geojson import to_geojson
 
 st.header('Visualization of California water testing Data over the last 100 years')
 
