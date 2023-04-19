@@ -47,7 +47,7 @@ map2014_dict =df_grouped2014.set_index("COUNTY_NAME")["counts"].to_dict()
 
 
 us_counties = (
-    "C:/Users/amcfa/Downloads/California_County_Boundaries.geojson"
+    "https://github.com/oohtmeel1/ColoradoBoulderVisalizations/blob/main/California_County_Boundaries.json"
 )
 
 color_scale = LinearColormap(['green','blue'], vmin = min(map1903_dict.values()), vmax = max(map1903_dict.values()))
