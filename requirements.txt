@@ -1,6 +1,6 @@
 branca==0.6.0
 folium ==0.14.0 
-json
+geojson == 3.0.1
 requests
 pandas
 geojson
