@@ -6,3 +6,4 @@ pandas
 geojson
 geopandas
 shapely
+streamlit-folium == 0.11.1
