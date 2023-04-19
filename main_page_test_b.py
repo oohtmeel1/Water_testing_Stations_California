@@ -222,7 +222,7 @@ color_scalea.add_to(m1)
 
 dicts = {"1903-1913":m,}
 years = st.sidebar.selectbox("Please pick a year range",
-                             ("1903-1913",))
+                             ("1903-1913","1914-1923"))
 
 if years =="1903-1913":
     st_data = st_folium(m, width=500)
