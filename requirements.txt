@@ -6,3 +6,4 @@ pandas
 geopandas
 shapely
 streamlit-folium == 0.11.1
+pandas-geojso==1.2.0
