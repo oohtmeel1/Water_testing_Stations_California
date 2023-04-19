@@ -56,9 +56,7 @@ us_counties = (
 )
 
 
-us_counties = (
-  "C:/Users/amcfa/Downloads/California_County_Boundaries.geojson"
-)
+
 
 
 style_function = lambda x: {'fillColor': '#ffffff', 
