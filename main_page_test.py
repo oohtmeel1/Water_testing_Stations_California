@@ -1,35 +1,4 @@
-import branca
-import folium
-import folium.plugins
-import streamlit as st
-from streamlit_folium import st_folium
-import pandas as pd
-import re
-import numpy as np
-import numpy as np
-from datetime import datetime 
-import altair as alt
-import json
-import requests
-import pandas as pd
-import numpy as np
-from folium.plugins import MarkerCluster
-from folium.plugins import TimeSliderChoropleth
-import matplotlib.pyplot as plt
-import matplotlib.pyplot as plt
-import numpy as np
-import geojson
-import geopandas
-import shapely
-from pandas_geojson import to_geojson
-import folium
-from folium.features import DivIcon
-from folium.plugins import MarkerCluster
-from branca.element import Figure
-from branca.colormap import linear
-import folium
-from branca.colormap import LinearColormap
-import json
+
 
 st.header('Visualization of California water testing Data over the last 100 years')
 
