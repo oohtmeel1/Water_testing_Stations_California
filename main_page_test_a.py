@@ -819,7 +819,7 @@ years = st.sidebar.selectbox("Please pick a year range",
 
 if years =="1903-1913":
     st_data = st_folium(m, width=500)
-    st.sidebar.table(data=df_grouped1903)
+    st.sidebar.table(data=df_grouped1903['COUNTY_NAME','counts'],)
 if years =="1914-1923":
     st_data = st_folium(m1, width=500)
 if years == "1924-1933":
