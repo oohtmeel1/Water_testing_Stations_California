@@ -7,3 +7,4 @@ geopandas
 shapely
 streamlit-folium == 0.11.1
 pandas-geojson==1.2.0
+altair==5.0.0
