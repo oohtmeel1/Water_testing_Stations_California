@@ -425,8 +425,7 @@ def page3():
     m8.add_child(folium.LayerControl())
 
 
-    color_scaleh.caption = "Number of stations per county"
-    color_scaleh.add_to(m8)
+
     ##
     color_scalei = LinearColormap(['green','blue'], vmin = min(map1994_dict.values()), vmax = max(map1994_dict.values()))
 
@@ -483,8 +482,7 @@ def page3():
     m9.add_child(folium.LayerControl())
 
 
-    color_scalei.caption = "Number of stations per county"
-    color_scalei.add_to(m9)
+
 
     ###
     color_scalej = LinearColormap(['green','blue'], vmin = min(map2004_dict.values()), vmax = max(map2004_dict.values()))
@@ -542,8 +540,7 @@ def page3():
     m10.add_child(folium.LayerControl())
 
 
-    color_scalej.caption = "Number of stations per county"
-    color_scalej.add_to(m10)
+
 
     ###
     color_scalek = LinearColormap(['green','blue'], vmin = min(map2014_dict.values()), vmax = max(map2014_dict.values()))
@@ -590,6 +587,9 @@ def page3():
         tooltip=folium.features.GeoJsonTooltip(
             fields=['COUNTY_NAME'
                     ,'counts'],
+            labels = False,
+            sticky =True,
+            markertooltip = False,
             aliases = ["County Name"
                     ,'number of stations'], # use fields from the json file
             style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;")
@@ -601,8 +601,7 @@ def page3():
     m11.add_child(folium.LayerControl())
 
 
-    color_scalek.caption = "Number of stations per county"
-    color_scalek.add_to(m11)
+
     image = Image.open('Deptofwaterresources.jpg')
 
 
@@ -641,12 +640,13 @@ def page3():
         with col2:
             
             st.markdown("""The Budget of California VS 
-                        the amount set aside for the Department of Water Resources.""")
+                        the amount set aside for the Department of Water Resources.
+                        Hovering over the bars reveals tooltips with additional information.""")
             title = alt.TitleParams('Budget of California Vs % used by DWR', anchor = 'middle')
             bar_chart = alt.Chart(budget1984,title=title).mark_bar().encode(
                 x="years:O",
                 y=alt.Y("state_budget",title ='Budget of California'),
-                color =alt.Color('state_budget', scale=alt.Scale(scheme='yellowgreenblue',zero=False)),
+                color =alt.Color('state_budget', scale=alt.Scale(scheme='yellowgreenblue',zero=False),legend=None),
                 tooltip=[alt.Tooltip('DWR', title="DWR Budget "),
                         alt.Tooltip("% of budget to DWR", title= '% of budget to DWR')])
             layer = alt.Chart(budget1984).mark_bar().encode(
@@ -665,7 +665,7 @@ def page3():
             not_bar = alt.Chart(pool,title=title).mark_bar().encode(
                 y =alt.Y('County', sort = None),
                 x=alt.X("Population_rank",title ='Population rank of county'),
-                color =alt.Color('Population_rank', scale=alt.Scale(scheme='blueorange',zero=False)),
+                color =alt.Color('Population_rank', scale=alt.Scale(scheme='blueorange',zero=False),legend= None),
                 tooltip=[alt.Tooltip('County', title="Name of County: "),
                         alt.Tooltip('Population', title=" mean population "),
                         alt.Tooltip('Population_rank')])
@@ -707,12 +707,13 @@ def page3():
                     st.dataframe(poola,height=280)
                     with col2:
                         st.markdown("""The Budget of California VS 
-                        the amount set aside for the Department of Water Resources.""")
+                        the amount set aside for the Department of Water Resources.
+                        Hovering over the bars reveals tooltips with additional information.""")
                         title = alt.TitleParams('Budget of California Vs % used by DWR', anchor = 'middle')
                         bar_chart = alt.Chart(budget1994,title=title).mark_bar().encode(
                             x="years:O",
                             y=alt.Y("state_budget",title ='Budget of California'),
-                            color =alt.Color('state_budget', scale=alt.Scale(scheme='yellowgreenblue',zero=False)),
+                            color =alt.Color('state_budget', scale=alt.Scale(scheme='yellowgreenblue',zero=False),legend=None),
                             tooltip=[alt.Tooltip('DWR', title="DWR Budget "),
                                     alt.Tooltip("% of budget to DWR", title= '% of budget to DWR')])
                         layer = alt.Chart(budget1994).mark_bar().encode(
@@ -730,7 +731,7 @@ def page3():
                         not_bar = alt.Chart(poola,title=title).mark_bar().encode(
                             y =alt.Y('County', sort = None),
                             x=alt.X("Population_rank",title ='Population rank of county'),
-                            color =alt.Color('Population_rank', scale=alt.Scale(scheme='blueorange',zero=False)),
+                            color =alt.Color('Population_rank', scale=alt.Scale(scheme='blueorange',zero=False),legend=None),
                             tooltip=[alt.Tooltip('County', title="Name of County: "),
                                     alt.Tooltip('Population', title=" mean population "),
                                     alt.Tooltip('Population_rank')])
@@ -769,7 +770,7 @@ def page3():
                         bar_chart = alt.Chart(budget2004,title=title).mark_bar().encode(
                             x="years:O",
                             y=alt.Y("state_budget",title ='Budget of California'),
-                            color =alt.Color('state_budget', scale=alt.Scale(scheme='yellowgreenblue',zero=False)),
+                            color =alt.Color('state_budget', scale=alt.Scale(scheme='yellowgreenblue',zero=False),legend=None),
                             tooltip=[alt.Tooltip('DWR', title="DWR Budget "),
                                     alt.Tooltip("% of budget to DWR", title= '% of budget to DWR')])
                         layer = alt.Chart(budget2004).mark_bar().encode(
@@ -785,7 +786,7 @@ def page3():
                         not_bar = alt.Chart(poolb,title=title).mark_bar().encode(
                             y =alt.Y('County', sort = None),
                             x=alt.X("Population_rank",title ='Population rank of county'),
-                            color =alt.Color('Population_rank', scale=alt.Scale(scheme='blueorange',zero=False)),
+                            color =alt.Color('Population_rank', scale=alt.Scale(scheme='blueorange',zero=False),legend=None),
                             tooltip=[alt.Tooltip('County', title="Name of County: "),
                                     alt.Tooltip('Population', title=" mean population "),
                                     alt.Tooltip('Population_rank')])
@@ -821,12 +822,13 @@ def page3():
                         st.markdown("""The Budget of California VS 
                         the amount set aside for the Department of Water Resources.
                         Most of this decade, the budget for DWR was so insignificant
-                        that it won't even appear as a data point.""")
+                        that it won't even appear as a data point.
+                        Hovering over the bars reveals tooltips with additional information.""")
                         title = alt.TitleParams('Budget of California Vs % used by DWR', anchor = 'middle')
                         bar_chart = alt.Chart(budget2023,title=title).mark_bar().encode(
                             x="years:O",
                             y=alt.Y("state_budget",title ='Budget of California'),
-                            color =alt.Color('state_budget', scale=alt.Scale(scheme='yellowgreenblue',zero=False)),
+                            color =alt.Color('state_budget', scale=alt.Scale(scheme='yellowgreenblue',zero=False),legend=None),
                             tooltip=[alt.Tooltip('DWR', title="DWR Budget "),
                                     alt.Tooltip("% of budget to DWR", title= '% of budget to DWR')])
                         layer = alt.Chart(budget2023).mark_bar().encode(
@@ -843,7 +845,7 @@ def page3():
                         not_bar = alt.Chart(poolc,title=title).mark_bar().encode(
                             y =alt.Y('County', sort = None),
                             x=alt.X("Population_rank",title ='Population rank of county'),
-                            color =alt.Color('Population_rank', scale=alt.Scale(scheme='blueorange',zero=False)),
+                            color =alt.Color('Population_rank', scale=alt.Scale(scheme='blueorange',zero=False),legend=None),
                             tooltip=[alt.Tooltip('County', title="Name of County: "),
                                     alt.Tooltip('Population', title=" mean population "),
                                     alt.Tooltip('Population_rank')])
