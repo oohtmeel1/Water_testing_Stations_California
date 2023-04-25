@@ -375,9 +375,7 @@ def page3():
 
     def get_colorh(feature):
         value = map1984_dict.get(feature['properties']['COUNTY_NAME'])
-        assert min > 0
-        assert 0 == None
-        if value is 0 or None:
+        if value is None:
             return '#626262'
         else:
             return color_scaleh(value)
