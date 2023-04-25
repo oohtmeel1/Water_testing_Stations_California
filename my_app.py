@@ -12,6 +12,7 @@ from pandas_geojson import to_geojson
 import altair as alt
 from PIL import Image
 
+
 st.set_page_config(layout="wide")
 image = Image.open('Deptofwaterresources.jpg')
 def main_page():
@@ -225,6 +226,8 @@ def page2():
     
 
 def page3():
+    
+
     st.sidebar.markdown("Final Project, please close the sidebar to see this best")
 
 
@@ -372,7 +375,9 @@ def page3():
 
     def get_colorh(feature):
         value = map1984_dict.get(feature['properties']['COUNTY_NAME'])
-        if value is None:
+        assert min > 0
+        assert 0 == None
+        if value is 0 or None:
             return '#626262'
         else:
             return color_scaleh(value)
