@@ -225,18 +225,6 @@ def page2():
     
 
 def page3():
-    
-    import folium
-    import streamlit as st
-    import pandas as pd
-    import numpy as np
-    from streamlit_folium import st_folium
-    from branca.colormap import LinearColormap
-    import json
-    import geojson
-    from pandas_geojson import to_geojson
-    import altair as alt
-    from PIL import Image
     st.sidebar.markdown("Final Project, please close the sidebar to see this best")
 
 
