@@ -709,6 +709,7 @@ def page3():
                         st.markdown("""The Budget of California VS 
                         the amount set aside for the Department of Water Resources.
                         Hovering over the bars reveals tooltips with additional information.""")
+                        
                         title = alt.TitleParams('Budget of California Vs % used by DWR', anchor = 'middle')
                         bar_chart = alt.Chart(budget1994,title=title).mark_bar().encode(
                             x="years:O",
@@ -765,7 +766,8 @@ def page3():
                     st.dataframe(poolb,height=280)
                     with col2:
                         st.markdown("""The Budget of California VS 
-                        the amount set aside for the Department of Water Resources.""")
+                        the amount set aside for the Department of Water Resources.
+                        Hovering over the bars reveals tooltips with additional information.""")
                         title = alt.TitleParams('Budget of California Vs % used by DWR', anchor = 'middle')
                         bar_chart = alt.Chart(budget2004,title=title).mark_bar().encode(
                             x="years:O",
