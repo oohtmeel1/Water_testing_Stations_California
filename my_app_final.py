@@ -11,7 +11,7 @@ import geojson
 from pandas_geojson import to_geojson
 import altair as alt
 from PIL import Image
-
+from streamlit_folium import folium_static
 
 st.set_page_config(layout="wide")
 image = Image.open('Deptofwaterresources.jpg')
@@ -205,7 +205,7 @@ def page2():
     m7.add_child(G)
 
     m7.add_child(folium.LayerControl())
-
+    m7=folium_static(m)
 
     color_scaleg.caption = "Number of stations per county"
     color_scaleg.add_to(m7)
