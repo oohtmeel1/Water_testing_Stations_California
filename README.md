@@ -16,9 +16,9 @@ I wanted to visualize the numbers of stations over the course of some amount of 
 
 To begin, finding the data was not an easy task. For some parts of this project, I had to read over files so old they were almost illegible so I had to do that by hand. 
 
-I collected data from various sources 
+I collected data from various sources, cleaned and compiled it and then built my app. 
 
-I created a dashboard  which can be found here:
+I created a dashboard  which can be found here: 
 https://oohtmeel1-coloradobouldervisalizations-my-app-final-j5ndhy.streamlit.app/
 
 
