@@ -16,7 +16,7 @@ from streamlit_folium import folium_static
 st.set_page_config(layout="wide")
 image = Image.open('Deptofwaterresources.jpg')
 def main_page():
-    st.title("An analysis of California's DWR testing stations")
+    st.title("Changes in numbers of water testing stations over time in the State of California")
     st.image(image, caption='Department of water resources logo (Wikipedia)')
     st.header(""" A brief introduction:
                                                   Some of the data comes from the Data.Gov repository, 
