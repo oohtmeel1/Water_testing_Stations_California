@@ -11,7 +11,7 @@ import geojson
 from pandas_geojson import to_geojson
 import altair as alt
 from PIL import Image
-from streamlit_folium import folium_static
+
 
 st.set_page_config(layout="wide")
 image = Image.open('Deptofwaterresources.jpg')
